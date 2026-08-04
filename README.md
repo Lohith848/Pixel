@@ -63,3 +63,9 @@ After installation, the `pixel` command will be available anywhere in your activ
 ## Storage and Privacy
 
 All your notes, to-dos, and reminders are stored locally in `~/.pixel-agent/pixel.db` using SQLite. No account is required, and your data never leaves your machine unless you are using the AI chat feature.
+
+---
+
+## Random idea by 
+
+LOHITH G.
