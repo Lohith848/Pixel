@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+pixel_agent/__init__.py
+pixel_agent/ai.py
+pixel_agent/cli.py
+pixel_agent/config.py
+pixel_agent/frames.py
+pixel_agent/render.py
+pixel_agent/storage.py
+pixel_agent.egg-info/PKG-INFO
+pixel_agent.egg-info/SOURCES.txt
+pixel_agent.egg-info/dependency_links.txt
+pixel_agent.egg-info/entry_points.txt
+pixel_agent.egg-info/requires.txt
+pixel_agent.egg-info/top_level.txt

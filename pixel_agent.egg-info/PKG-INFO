@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: pixel-agent
+Version: 0.1.0
+Summary: PIXEL — a pixel-art CLI agent for daily-life commands
+Requires-Python: >=3.11
+Requires-Dist: typer>=0.27
+Requires-Dist: rich>=13.7
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: groq>=1.0
+Requires-Dist: anthropic>=0.30
+Requires-Dist: python-dateutil>=2.9
