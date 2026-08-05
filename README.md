@@ -1,216 +1,324 @@
 
-## PIXEL — Your Terminal AI Assistant
+# PIXEL — Terminal AI Assistant
 
-PIXEL is a clever, pixel-art CLI assistant that lives directly in your terminal. It helps you manage notes, track to-dos, set reminders, execute terminal commands, and chat with AI — all backed by the lightning-fast Groq API with a customizable personality.
+<p align="center">
+  <strong>A lightweight AI assistant that lives in your terminal.</strong>
+</p>
 
-Everything except free-text AI chat works completely offline, and all your data is stored locally.
+<p align="center">
+  Chat with AI · Run commands · Manage tasks · Take notes · Set reminders
+</p>
 
-### Features
-
-- Conversational AI — Chat with PIXEL directly from your terminal.
-- Mood System — Change PIXEL's personality on the fly ("normal", "focused", "debugging", "roast").
-- Terminal Execution — Ask PIXEL to generate and safely execute shell commands.
-- Task Management — Fully offline notes, to-dos, and reminders.
-- Aliases — Configure shortcuts to open apps or run frequently used scripts.
-- Global Terminal Access — Install PIXEL with "pipx" and use the "pixel" command from any directory without manually activating a virtual environment.
+<p align="center">
+  <img src="assets/pixel-demo.png" alt="PIXEL Terminal Assistant" width="850">
+</p>
 
 ---
 
-### Installation
+## About
 
-1. Clone the repository
+**PIXEL** is a lightweight command-line AI assistant designed to work directly from your terminal.
 
+It combines AI-powered conversations with practical offline tools for managing notes, to-dos, reminders, terminal commands, and custom aliases.
+
+PIXEL uses **Groq** for AI conversations, while its local utilities work offline and store data on your machine.
+
+---
+
+## Features
+
+| Feature | Description |
+|---|---|
+| **AI Chat** | Talk to PIXEL directly from your terminal |
+| **Mood System** | Switch between `normal`, `focused`, `debugging`, and `roast` personalities |
+| **Command Execution** | Generate terminal commands and review them before execution |
+| **Notes** | Quickly save and view notes locally |
+| **To-Dos** | Add, list, and complete tasks |
+| **Reminders** | Create and manage reminders |
+| **Custom Aliases** | Create shortcuts for applications, commands, and scripts |
+| **Global Access** | Run `pixel` from any directory without activating a virtual environment |
+
+---
+
+## Installation
+
+### Requirements
+
+Before installing PIXEL, make sure you have:
+
+- Python 3.10 or later
+- Git
+- A Groq API key
+- Windows PowerShell
+
+### 1. Clone the repository
+
+```powershell
 git clone https://github.com/Lohith848/Pixel.git
 cd Pixel
+```
 
-2. Configure your Groq API key
+### 2. Configure the environment
 
-Copy the example environment file:
+Create your `.env` file:
 
+```powershell
 copy .env.example .env
+```
 
-Open ".env" and add your Groq API key.
+Open `.env` and add your Groq API key.
 
----
+```env
+GROQ_API_KEY=your_api_key_here
+```
 
-## Recommended: Global Installation with pipx
+> Never commit your `.env` file or API key to GitHub.
 
-Using "pipx" allows PIXEL to live directly in your terminal.
+### 3. Install pipx
 
-You won't need to navigate to the PIXEL folder or activate a virtual environment every time you want to use it.
+PIXEL can be installed with `pipx` so the `pixel` command is available globally.
 
-1. Install pipx
-
+```powershell
 py -m pip install --user pipx
-
-2. Add pipx to PATH
-
 py -m pipx ensurepath
+```
 
-Close and reopen PowerShell after running this command.
+Close and reopen PowerShell after running `ensurepath`.
 
 Verify the installation:
 
+```powershell
 pipx --version
+```
 
-3. Install PIXEL globally
+### 4. Install PIXEL
 
-From inside the PIXEL repository:
+From inside the PIXEL project directory:
 
+```powershell
 pipx install -e .
+```
 
-The "-e" flag installs PIXEL in editable mode, which is useful for development. Changes you make to PIXEL's Python source code will be reflected without having to reinstall the package every time.
+PIXEL is now ready to use.
 
-4. Run PIXEL from anywhere
+---
 
-You can now leave the project directory:
+## Quick Start
 
-cd $HOME
+Once installed, PIXEL can be launched from **any directory**.
 
-And simply run:
-
+```powershell
 pixel look
+```
 
-Or:
+Talk to PIXEL:
 
+```powershell
 pixel "hello"
+```
 
-PIXEL is now available globally in your terminal.
+Ask a question:
 
-No more:
+```powershell
+pixel "explain recursion simply"
+```
 
-cd Downloads
-cd pixel-agent
-.\venv\Scripts\activate
-
-Just:
-
-pixel
+No virtual environment activation or project directory navigation is required.
 
 ---
 
-## Alternative: Virtual Environment Installation
+## Commands
 
-If you don't want to install PIXEL globally, you can still use a traditional Python virtual environment.
+### AI
 
-Create the environment:
+| Command | Description |
+|---|---|
+| `pixel "your message"` | Chat with PIXEL |
+| `pixel do "task"` | Generate a terminal command |
+| `pixel mood <mood>` | Change PIXEL's personality |
+| `pixel look` | Display the PIXEL mascot |
 
-python -m venv venv
+Example:
 
-Activate it on Windows:
+```powershell
+pixel "explain what this git command does"
+```
 
-.\venv\Scripts\activate
+### Mood System
 
-Install PIXEL:
+PIXEL supports multiple personalities:
 
-pip install -e .
+```powershell
+pixel mood normal
+pixel mood focused
+pixel mood debugging
+pixel mood roast
+```
 
-PIXEL will then be available while the virtual environment is active.
+| Mood | Behaviour |
+|---|---|
+| `normal` | Friendly general-purpose assistant |
+| `focused` | Short and direct responses |
+| `debugging` | Focused on technical problems and code |
+| `roast` | More sarcastic and playful responses |
 
----
-
-## Usage Guide
-
-# AI and Execution
-
-Chat with PIXEL:
-
-pixel "what is my schedule?"
+### Command Execution
 
 Ask PIXEL to generate a terminal command:
 
+```powershell
 pixel do "find all python files"
+```
 
-PIXEL generates the appropriate command and asks for confirmation before executing it.
+PIXEL displays the generated command and asks for confirmation before executing it.
 
-Change PIXEL's personality:
-
-pixel mood roast
-
-Available moods:
-
-normal
-focused
-debugging
-roast
-
----
-
-## Offline Utilities
-
-Display PIXEL's mascot:
-
-pixel look
+### Notes
 
 Add a note:
 
-pixel note "idea: build a terminal game"
+```powershell
+pixel note "idea: build a terminal dashboard"
+```
 
-View your notes:
+View notes:
 
+```powershell
 pixel note list
+```
 
-Add a to-do:
+### To-Dos
 
+Add a task:
+
+```powershell
 pixel todo add "fix login bug"
+```
 
-View open to-dos:
+View open tasks:
 
+```powershell
 pixel todo list
+```
 
-View all to-dos:
+View all tasks:
 
+```powershell
 pixel todo list --all
+```
 
-Mark a to-do as complete:
+Complete a task:
 
+```powershell
 pixel todo done <id>
+```
 
-Add a reminder:
+### Reminders
 
-pixel remind "call mom" --at "6pm"
+Create a reminder:
+
+```powershell
+pixel remind "submit assignment" --at "6pm"
+```
 
 View pending reminders:
 
+```powershell
 pixel remind list
-
----
+```
 
 ### Custom Aliases
 
-PIXEL can run aliases configured in your ".env" file.
+PIXEL can launch applications or run frequently used commands through aliases configured in `.env`.
 
 For example:
 
+```powershell
 pixel open vscode
-
-This lets you create shortcuts for frequently used applications, commands, or scripts.
+```
 
 ---
 
-### Example
+## Global Terminal Access
 
-Once PIXEL is globally installed, you can open a fresh PowerShell window from any directory:
+PIXEL is installed using `pipx`, which keeps it in an isolated Python environment while making the command globally available.
 
-PS C:\Users\User> pixel look
+Instead of doing this every time:
 
-╭──── PIXEL ────╮
-│               │
-│  ▄▄▄▄▄▄▄      │
-│  █ ■ ■ █      │
-│  █  ▽  █      │
-│  ▀▀▀▀▀▀▀      │
-│               │
-│  "your move." │
-╰───────────────╯
+```powershell
+cd Pixel
+.\venv\Scripts\activate
+pixel look
+```
 
-Then simply talk to it:
+You can simply open a terminal anywhere and run:
 
-pixel "explain recursion"
+```powershell
+pixel look
+```
 
-PIXEL stays one command away — wherever you are in your terminal.
+or:
 
+```powershell
+pixel "what can you do?"
+```
 
-### Author
+---
 
-LOHITH G
+## Project Structure
+
+```text
+Pixel/
+├── assets/
+│   └── pixel-demo.png
+├── .env.example
+├── .gitignore
+├── README.md
+├── pyproject.toml
+└── ...
+```
+
+---
+
+## Development
+
+PIXEL is installed in editable mode using:
+
+```powershell
+pipx install -e .
+```
+
+This means changes to the Python source code are reflected in the installed `pixel` command, making development and testing easier.
+
+To uninstall PIXEL:
+
+```powershell
+pipx uninstall pixel
+```
+
+> If your package name registered with pipx is different, use `pipx list` to find the installed package name.
+
+---
+
+## Privacy
+
+PIXEL is designed to keep local utilities local.
+
+- Notes, to-dos, reminders, and aliases are stored locally.
+- AI conversations require an internet connection and use the configured Groq API.
+- Your Groq API key is stored in your local `.env` file.
+- The `.env` file should never be committed to the repository.
+
+---
+
+## License
+
+This project is intended for learning, experimentation, and development.
+
+See the `LICENSE` file for licensing information.
+
+---
+
+<p align="center">
+  <strong>PIXEL</strong><br>
+  Your terminal. Your assistant. One command away.
+</p>
