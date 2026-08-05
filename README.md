@@ -1,5 +1,5 @@
 
-# PIXEL — Terminal AI Assistant
+## PIXEL — Terminal AI Assistant
 
 <p align="center">
   <strong>A lightweight AI assistant that lives in your terminal.</strong>
@@ -292,14 +292,6 @@ PIXEL is designed to keep local utilities local.
 - AI conversations require an internet connection and use the configured Groq API.
 - Your Groq API key is stored in your local `.env` file.
 - The `.env` file should never be committed to the repository.
-
----
-
-## License
-
-This project is intended for learning, experimentation, and development.
-
-See the `LICENSE` file for licensing information.
 
 ---
 
