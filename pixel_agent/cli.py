@@ -37,7 +37,7 @@ KNOWN_COMMANDS = {"look", "note", "todo", "remind", "open", "run", "chat", "mood
 GREETINGS = {
     "minimal": ["ready.", "listening.", "go ahead."],
     "warm": ["hey! what's up?", "here for you \u2014 what do you need?", "ready when you are."],
-    "witty": ["still standing by, unlike your build.", "beep. boop. i mean, hi.", "your move.", "now its not important","I'm here"],
+    "witty": ["still standing by, unlike your build.", "beep. boop. i mean, hi.", "your move.","I'm here"],
 }
 
 
