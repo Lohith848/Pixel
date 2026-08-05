@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/pixel-demo.png" alt="PIXEL Terminal Assistant" width="850">
+  <img src="assests/pixel-demo.png" alt="PIXEL Terminal Assistant" width="850">
 </p>
 
 ---
@@ -260,21 +260,6 @@ or:
 
 ```powershell
 pixel "what can you do?"
-```
-
----
-
-## Project Structure
-
-```text
-Pixel/
-├── assets/
-│   └── pixel-demo.png
-├── .env.example
-├── .gitignore
-├── README.md
-├── pyproject.toml
-└── ...
 ```
 
 ---
