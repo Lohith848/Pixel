@@ -1,5 +1,5 @@
 
-### PIXEL — Terminal AI Assistant
+### PIXEL — Terminal AI Assistant.
 
 <p align="center">
   <strong>A lightweight AI assistant that lives in your terminal.</strong>
