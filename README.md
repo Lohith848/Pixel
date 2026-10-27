@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Chat with AI · Run commands · Manage tasks · Take notes · Set reminders
+  Chat with AI · Run commands · Manage tasks · Take notes · Set reminders •
 </p>
 
 <p align="center">
